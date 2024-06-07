@@ -1,0 +1,146 @@
+.header {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    background-color: var(--white-color-deam);
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    z-index: 1000;
+}
+
+.logo {
+    color: var(--black-color);
+    font-weight: 600;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+
+    .icon {
+        font-style: 25px;
+        color: var(--primary-color);
+        transform: translateY(7px);
+        margin-right: .6rem;
+    }
+}
+
+
+@media screen and (max-width: 769px) {
+    .nav-bar {
+        background-color: var(--white-color-deam);
+        position: absolute;
+        padding: 1rem;
+        width: 80%;
+        height: max-content;
+        top: -500rem;
+        left: 50%;
+        box-shadow: var(--shadow);
+        border-radius: 1rem;
+        transform: translate(-50%);
+        transition: .1s ease;
+        z-index: 2000;
+        align-items: center;
+    }
+
+    .show-nav {
+        top: 6rem;
+    }
+    .nav-lists {
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        margin: auto;
+        padding: .5rem 0;
+    }
+    .nav-item {
+        padding: 1rem;
+    }
+
+    .nav-link {
+        font-weight: 500;
+        color: var(--text-color);
+        cursor: pointer;
+        font-size: .9rem;
+        &:hover{
+            color: var(--primary-color);
+        }
+    }
+    .btn {
+        margin-top: 2rem;
+    }
+    .btn a{
+        font-weight: 600;
+        color: var(--white-color);
+    }
+
+    .close-nav-bar {
+        position: absolute;
+        top: 0;
+        right: 1.2rem;
+        color: var(--primary-color);
+        &:hover{
+            color: var(--secondary-color);
+        }
+    }
+}
+
+.nav-bar {
+    justify-content: space-between;
+
+}
+
+.nav-item {
+    padding: 1rem;
+    font-weight: 400;
+    font-size: medium;
+    color: var(--primary-color);
+    &:hover {
+        color: var(--secondary-color);
+    }
+}
+
+@media screen and (min-width:769px) {
+    .toggle-nav-bar, .close-nav-bar {
+        display: none;
+    }
+
+    .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+        .nav-bar {
+            .nav-lists {
+                .nav-item {
+                    .nav-link {
+                        font-weight: 500;
+                        padding: 0 0.1rem;
+                        color: var(--text-color);
+                        &:hover {
+                            color: var(--primary-color);
+                        }
+                    }
+                }
+
+                .btn {
+                    margin-left: 1rem;
+                    a {
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:960px){
+    .header {
+        .nav-bar {
+            .nav-lists {
+                .nav-item {
+                    padding: 0 1rem;
+                }
+            }
+        }
+    }    
+}

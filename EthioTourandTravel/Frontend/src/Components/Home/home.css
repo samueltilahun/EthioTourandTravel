@@ -1,0 +1,213 @@
+.home {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+
+    video {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        bottom: 0;
+        object-fit: cover;
+    }
+
+    .home-content {
+        margin: 200px 1px;
+        width: 100%;
+        height: max-content;
+        align-items: stretch;
+        display: flex;
+        justify-content: center;
+        color: var(--white-color);
+        flex-direction: column;
+        /* margin: auto; */
+        padding: 8rem 1.5rem 3rem;
+        z-index: 100;
+        row-gap: 3rem;
+    }
+
+    .card-div {
+        position: relative;
+        background-color: var(--white-color);
+        border-radius: 10px;
+        padding: 2rem 2rem 3rem 2rem;
+        gap: 2rem;
+        width: 100%;
+    
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--primary-color);
+            padding-bottom: 1rem;
+        }
+        .input {
+            height: 40px;
+            width: 100%;
+            background: var(--input-color);
+            border-radius: 1rem;
+            padding: 0 1rem;
+    
+            input {
+                font-size: 13px;
+                font-weight: 500;
+                width: 100%;
+                outline: none;
+                border: none;
+                background-color: var(--input-color);
+            }
+    
+            .icon {
+                color: var(--primary-color);
+                font-size: 25px;
+                margin-left: 10px;
+            }
+        }
+        label, h3 {
+            color: var(--primary-color);
+        }
+     
+        .label-total {
+            align-items: center;
+            justify-content: space-between;
+
+            h3 {
+                padding-bottom: 1rem;
+            }
+        }
+    
+        .search-options {
+            position: absolute;
+            bottom: -1rem;
+            background-color: var(--gradient-color);
+            padding: 10px 0.8rem;
+            border-radius: 1rem;
+            transform: translate(-50%);
+            left: 50%;
+            width: max-content;
+            gap: .7rem;
+            font-weight: 500;
+            cursor: pointer;
+    
+            .icon {
+                font-size: 20px;
+            }
+    
+            span {
+                font-size: 13px;
+            }
+        }
+    }
+}
+
+
+.footer-icons {
+    justify-content: space-between;
+    width: 100%;
+    .icon {
+        font-weight: 600;
+        color: var(--white-color);
+        font-size: 20px;
+        margin: 0 5px;
+        &:hover {
+            color: var(--primary-color);
+        }
+    }
+}
+@media screen and (min-width:400px){
+    .small-text {
+        font-size: 15px;
+    }
+    
+    .home-text {
+        font-size: 1.4rem;
+    }
+}
+@media screen and (min-width: 630px) {
+    .home {
+        .home-content {
+            .text-div {
+                .small-text {
+                    font-size: 20px;
+                }
+
+                .home-text {
+                    width: max-content;
+                    font-size: 2.3rem;
+
+                    h1 { 
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            width: 208px;
+                            background-color: var(--primary-color);
+                            bottom: 10px;
+                            right: 7px;
+                            height: 7px;
+                            z-index: -1;
+                        }
+                    }
+                }
+            }
+            
+            .card-div {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 720px) {
+    .home {
+        .home-content {
+            .text-div {
+                .small-text {
+                    font-size: 20px;
+                }
+
+                .home-text {
+                    width: max-content;
+                    font-size: 2.3rem;
+
+                    h1 { 
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            width: 208px;
+                            background-color: var(--primary-color);
+                            bottom: 10px;
+                            right: 7px;
+                            height: 7px;
+                            z-index: -1;
+                        }
+                    }
+                }
+            }
+            
+            .card-div {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 940px) {
+    .home {
+        height: 85vh;
+    }
+}
+
+@media screen and (min-width: 1240px) {
+    .home {
+        height: 95vh;
+    }
+
+    .home-content {
+
+    }
+}
+

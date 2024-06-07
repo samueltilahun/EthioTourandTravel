@@ -1,0 +1,186 @@
+.main {
+    .title {
+        font-size: 25px;
+        font-weight: 700;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        color: var(--text-color);
+        span {
+            text-decoration: underline var(--primary-color);
+        }
+    }
+}
+
+.section-content {
+    justify-content: center;
+    gap: 1.5rem;
+
+    .singleDestination {
+        height: 100%;
+        /* display: grid; */
+
+        background-color: var(--card-bg);
+        border-radius: 15px;
+        margin-bottom: 1.3rem;
+        align-items: center;
+        box-shadow: 0 2px 4px rgba(140, 140, 140, .549);
+        overflow: hidden;
+
+        &:hover {
+            background-color: var(--card-hover);
+            box-shadow: 1 4px 4px rgba(85, 85, 85, .549);
+            transition: .3s ease;
+        }
+
+        .card-image {
+            height: 180px;
+            width: 100%;
+            overflow: hidden;
+
+            img {
+                justify-content: center;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                transition: 1s ease;
+            }
+            &:hover {
+                img{
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        .card-info {
+            padding: 1rem;
+            margin-bottom: 4rem;
+    
+            .dest-title {
+                font-weight: 700;
+                font-size: 22px;
+            }
+            .icon {
+                font-weight: 700;
+                font-size: 20px;
+                color: var(--text-color);
+            }
+            .location {
+                gap: 5px;
+                color: var(--text-color);
+                font-weight: 400;
+                font-size: 15px;
+            }
+            .fees {
+                justify-content: space-between;
+                padding: 1rem;
+                margin: 1rem 0;
+                border-top: 1.5px solid var(--grey-text);
+                border-bottom: 1.5px solid var(--grey-text);
+                width: 100%;
+    
+                .grade {
+                    color: var(--text-color);
+                }
+    
+                small {
+                    background-color: var(--gradient-color);
+                    border-radius: 1rem;
+                    padding: 1px 10px;
+                    color: var(--white-color);
+                    font-size: 10px;
+                }
+    
+                .price {
+                    font-weight: 700;
+                    font-size: 22px;
+                }
+            }
+            .description {
+                font-size: 15px;
+                font-weight: 500;
+                color: var(--text-color);
+            }
+            .btn {
+                position: absolute;
+                bottom: 0;
+                margin-bottom: 2rem;
+                max-width: fit-content;
+                color: var(--white-color);
+                font-weight: 600;
+                font-size: 15px;
+                gap: .4rem;
+                justify-content: space-between;
+            
+                .icon {
+                    font-size: 18px;
+                    color: var(--white-color);
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (min-width: 500px) {
+    .title {
+        font-size: 5px;
+    }
+    .section-content{
+        grid-template-columns: repeat(2, 1fr);
+        height: auto;
+        
+        .singleDestination {
+            .card-info {
+                .dest-title {
+                    font-size: 1rem;
+                }
+                
+                .location {
+                    font-size: .8rem;
+                }
+
+                .grade {
+                    font-size: .9rem;
+                }
+
+                .description {
+                    font-size: .8rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 840px) {
+    .title {
+        font-size: 5px;
+    }
+    .section-content{
+        grid-template-columns: repeat(3, 1fr);
+        height: auto;
+        
+        .singleDestination {
+            .card-info {
+                .dest-title {
+                    font-size: 22px;
+                }
+                
+                .location {
+                    font-size: 15px;
+                }
+
+                .grade {
+                    font-size: 1rem;
+                }
+
+                .price {
+                    font-size: 22px;
+                }
+
+                .description {
+                    font-size: .8rem;
+                }
+            }
+        }
+    }
+}
