@@ -5,7 +5,7 @@ import Navbar from './Components/Navbar/Navbar'
 import Main from './Components/Main/Main'
 import Footer from './Components/Footer/Footer'
 import Admin from './Components/Admin/admin'
-import Packages from './Components/packages/packages'
+import Packages from './Components/Packages/Packages'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 const CombinedLayout = () => (
