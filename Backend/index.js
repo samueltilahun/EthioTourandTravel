@@ -18,8 +18,10 @@ app.use(express.json());
 app.use("/api", routes)
 
 mongoose.connect(process.env.DB)
-    .then(() => { app.listen(process.env.PORT, () => {
-        console.log(process.env.PORT)
-    })
+    .then(() => { 
+        console.log('connected successfully!')
 })
     .catch((err) => console.log(err))
+
+    // Export the Express app
+module.exports = app;
