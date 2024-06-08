@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 
 //middleware
 app.use(express.json()); 
-app.use("https://ethio-tourand-travel.vercel.app/api", routes)
+app.use("/api", routes)
 
 mongoose.connect(process.env.DB)
     .then(() => { 
