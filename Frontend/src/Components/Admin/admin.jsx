@@ -26,7 +26,7 @@ const Admin = () => {
     // const tourDetail = {imgSrc, destTitle, location, grade, fees, description}
     // console.log(tourDetail)
 
-    const response = await fetch('/api', {
+    const response = await fetch('https://ethio-tourand-travel.vercel.app/api', {
       method: 'POST',
       body: formData, 
     })
