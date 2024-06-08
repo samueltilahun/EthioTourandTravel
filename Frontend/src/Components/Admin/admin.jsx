@@ -26,10 +26,10 @@ const Admin = () => {
     // const tourDetail = {imgSrc, destTitle, location, grade, fees, description}
     // console.log(tourDetail)
 
-    const response = await fetch('${process.env.REACT_APP_API_BASE_URL}/api', {
+    const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api`, {
       method: 'POST',
-      body: formData, 
-    })
+      body: formData,
+    });
 
     try {
       const json = await response.json()
