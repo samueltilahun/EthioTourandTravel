@@ -18,7 +18,7 @@ const Main = () => {
 
     const getDestinations = async () => {
       try {
-        const response = await fetch('/api')
+        const response = await fetch('${process.env.REACT_APP_API_BASE_URL}/api')
         // console.log(response)
         if(!response.ok) {
           throw new Error('Failed to fetch destinations')
