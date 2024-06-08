@@ -13,7 +13,7 @@ app.use('/server/uploads', express.static(path.join(__dirname, 'server', 'upload
 app.use(express.json()); 
 app.use("/api", routes)
 
-mongoose.connect(process.env.DB, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.DB)
     .then(() => { app.listen(process.env.PORT, () => {
         console.log(process.env.PORT)
     })
