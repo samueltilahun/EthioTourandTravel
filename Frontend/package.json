@@ -1,5 +1,5 @@
 {
-  "proxy": "https://ethio-tourand-travel-flr5.vercel.app",
+  "proxy": "http://localhost:4000",
   "name": "tourandtravel",
   "version": "0.1.0",
   "private": true,
