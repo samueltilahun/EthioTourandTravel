@@ -9,15 +9,15 @@ const app = express();
 // Serve static files from the 'server/uploads' directory
 app.use('/server/uploads', express.static(path.join(__dirname, 'server', 'uploads')));
 
-mongoose.connect(process.env.DB)
+//middleware
+app.use(express.json()); 
+app.use("/api", routes)
+
+mongoose.connect(process.env.DB, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => { app.listen(process.env.PORT, () => {
         console.log(process.env.PORT)
     })
 })
     .catch((err) => console.log(err))
 
-//middleware
-app.use(express.json()); 
-    
-app.use("/api", routes)
- 
+module.exports = app;
