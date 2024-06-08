@@ -22,7 +22,7 @@ const App = () => {
     <BrowserRouter>
     <Navbar />
     <Routes>
-    <Route path="/" element={<CombinedLayout />}/>
+      <Route path="/" element={<CombinedLayout />}/>
       <Route path='/admin' element={<Admin />}/>
       <Route path='/packages' element={<Packages />}/>
     </Routes>
