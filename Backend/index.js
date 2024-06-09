@@ -18,6 +18,10 @@ app.get('/', (req, res) => {
     res.json('working')
 })
 
+// Test endpoint to ensure server is running
+app.get('/test', (req, res) => {
+    res.json({ message: "API is working" });
+});
 
 app.use("/api", routes)
 
