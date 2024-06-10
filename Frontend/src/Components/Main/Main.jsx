@@ -51,7 +51,7 @@ const Main = () => {
           return(
             <div data-aos='fade-up' className="singleDestination" key={destination._id}>
               <div className="card-image">
-              {console.log("Image Path:", destination.imgSrc)} 
+              {console.log(<img src={`${process.env.REACT_APP_API_BASE_URL}/${destination.imgSrc}`} alt={destination.destTitle} />)} 
               <img src={`${process.env.REACT_APP_API_BASE_URL}/${destination.imgSrc}`} alt={destination.destTitle} />
 
                 
