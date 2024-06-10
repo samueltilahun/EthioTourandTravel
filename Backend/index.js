@@ -14,6 +14,11 @@ app.use('/server/uploads', express.static(path.join(__dirname, 'server', 'upload
 //middleware
 app.use(express.json()); 
 
+// Enable CORS for all routes
+app.use(cors({
+    origin: 'https://ethio-tourand-travel-frontend.vercel.app', // Replace with your frontend domain
+  }));
+
 app.get('/', (req, res) => {
     res.json('working')
 })
