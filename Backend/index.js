@@ -16,7 +16,7 @@ app.use(express.json());
 
 // Enable CORS for all routes
 app.use(cors({
-    origin: 'https://ethio-tourand-travel-frontend.vercel.app', // Replace with your frontend domain
+    origin: 'https://ethio-tourand-travel-frontend.vercel.app/', // Replace with your frontend domain
   }));
 
 app.get('/', (req, res) => {
