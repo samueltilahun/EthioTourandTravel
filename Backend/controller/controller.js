@@ -27,32 +27,26 @@ const Admin = async (req, res) => {
     
     const upload = multer({ storage }).single('image');
 
-    upload(req, res, async (err) => {
-        if (err) {
-            return res.status(400).json({ error: err.message });
-        }
+    const { destTitle, location, grade, fees, description } = req.body;  
+    const imgSrc = req.file ? `server/uploads/${req.file.filename}` : null;
 
-        const { destTitle, location, grade, fees, description } = req.body;  
-        const imgSrc = req.file ? `/uploads/${req.file.filename}` : null;
+    console.log("Image Path:", imgSrc); // Log the file path
 
-        console.log("Image Path:", imgSrc); // Log the file path
+    const newtourData = new tourData({
+        imgSrc,
+        destTitle,
+        location,
+        grade,
+        fees: Number(fees),
+        description,
+      });
 
-        const newtourData = new tourData({
-            imgSrc,
-            destTitle,
-            location,
-            grade,
-            fees: Number(fees),
-            description,
-        });
-
-        try {
-            const tour = await newtourData.save()
-            res.status(200).json(tour)
-        }catch (error){
-            res.status(400).json({error: error.message})
-        }
-    }) 
+    try {
+        const tour = await newtourData.save()
+        res.status(200).json(tour)
+    }catch (error){
+        res.status(400).json({error: error.message})
+    }
 }
 
 const Packages = () => {
