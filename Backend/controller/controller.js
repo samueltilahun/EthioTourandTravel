@@ -15,7 +15,6 @@ const getDestinations = async (req, res) => {
 
 
 const Admin = async (req, res) => {
-    console.log("admin controller")
 
     const storage = multer.diskStorage({
         destination: (req, file, cb) => {
@@ -25,15 +24,13 @@ const Admin = async (req, res) => {
             cb(null, Date.now() + path.extname(file.originalname));
         },
     });
-    console.log(path.extname(file.originalname))
+    
     const upload = multer({ storage });
 
     const { destTitle, location, grade, fees, description } = req.body;  
-    console.log("not yet")
     const imgSrc = req.file ? `server/uploads/${req.file.filename}` : null;
-    console.log("yes")
 
-    // console.log("Image Path:", imgSrc); // Log the file path
+    console.log("Image Path:", imgSrc); // Log the file path
 
     const newtourData = new tourData({
         imgSrc,
