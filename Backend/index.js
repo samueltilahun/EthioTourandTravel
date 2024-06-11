@@ -8,9 +8,7 @@ const cors = require('cors');
 const app = express();
 
 // Serve static files from the 'server/uploads' directory
-app.use('/server/uploads', express.static(path.join(__dirname, 'server', 'uploads')));
-
-
+app.use('/uploads', express.static(path.join(__dirname, 'server', 'uploads')));
 
 //middleware
 app.use(express.json()); 
