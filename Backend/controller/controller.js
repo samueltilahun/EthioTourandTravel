@@ -15,6 +15,7 @@ const getDestinations = async (req, res) => {
 
 
 const Admin = async (req, res) => {
+    console.log("admin controller")
 
     const storage = multer.diskStorage({
         destination: (req, file, cb) => {
