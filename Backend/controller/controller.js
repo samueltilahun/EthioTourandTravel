@@ -24,7 +24,7 @@ const Admin = async (req, res) => {
             cb(null, Date.now() + path.extname(file.originalname));
         },
     });
-    
+    console.log(path.extname(file.originalname))
     const upload = multer({ storage });
 
     const { destTitle, location, grade, fees, description } = req.body;  
