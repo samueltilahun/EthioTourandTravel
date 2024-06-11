@@ -30,7 +30,7 @@ const Admin = async (req, res) => {
     const { destTitle, location, grade, fees, description } = req.body;  
     const imgSrc = req.file ? `server/uploads/${req.file.filename}` : null;
 
-    console.log("Image Path:", imgSrc); // Log the file path
+    // console.log("Image Path:", imgSrc); // Log the file path
 
     const newtourData = new tourData({
         imgSrc,
