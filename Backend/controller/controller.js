@@ -18,14 +18,14 @@ const Admin = async (req, res) => {
 
     const storage = multer.diskStorage({
         destination: (req, file, cb) => {
-          cb(null, 'uploads/');
+            cb(null, path.join(__dirname,'..', 'server', 'uploads')); // Ensure correct path
         },
         filename: (req, file, cb) => {
-          cb(null, Date.now() + path.extname(file.originalname));
+            cb(null, Date.now() + path.extname(file.originalname));
         },
-      });
+    });
     
-    const upload = multer({ storage });
+    const upload = multer({ storage }).single('image');
 
     const { destTitle, location, grade, fees, description } = req.body;  
     console.log(":::",req.file.path) 
