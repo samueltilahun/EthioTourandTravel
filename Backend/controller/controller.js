@@ -28,7 +28,7 @@ const Admin = async (req, res) => {
     const upload = multer({ storage }).single('image');
 
     const { destTitle, location, grade, fees, description } = req.body;  
-    console.log(":::",req.file.path) 
+    // console.log(":::",req.file.path) 
     const imgSrc = req.file ? `server/uploads/${req.file.filename}` : null;
 
     console.log("Image Path:", imgSrc); // Log the file path
