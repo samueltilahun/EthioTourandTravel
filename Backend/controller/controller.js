@@ -16,22 +16,31 @@ const getDestinations = async (req, res) => {
 
 const Admin = async (req, res) => {
 
+    // Multer configuration
     const storage = multer.diskStorage({
         destination: (req, file, cb) => {
-            cb(null, path.join(__dirname, 'server', 'uploads')); // Ensure correct path
+            cb(null, path.join(__dirname, '..', 'server', 'uploads')); // Adjust the destination path as needed
         },
         filename: (req, file, cb) => {
             cb(null, Date.now() + path.extname(file.originalname));
         },
     });
     
-    const upload = multer({ storage });
+    const upload = multer({ storage }).single('image');
 
-    const { destTitle, location, grade, fees, description } = req.body;  
-    const imgSrc = req.file ? `/uploads/${req.file.filename}` : null;
+    // Upload middleware
+    upload(req, res, async (err) => {
+        if (err) {
+            return res.status(400).json({ error: err.message });
+        }
 
-    console.log("Image Path:", imgSrc); // Log the file path
+        // Now you can access req.file to get the uploaded file details
+        const { destTitle, location, grade, fees, description } = req.body;
+        const imgSrc = req.file ? `/uploads/${req.file.filename}` : null;
 
+        console.log("Image Path:", imgSrc); // Log the file path
+    });
+    
     const newtourData = new tourData({
         imgSrc,
         destTitle,
