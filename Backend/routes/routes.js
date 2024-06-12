@@ -14,28 +14,8 @@ const controller = require("../controller/controller")
 //     },
 //   });
   
-// const upload = multer({ storage });
-
-// Configure Cloudinary
-cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET,
-});
-
-const storage = new CloudinaryStorage({
-  cloudinary: cloudinary,
-  params: {
-      folder: 'uploads', // Optional folder name on Cloudinary
-      format: async (req, file) => 'png', // Supports promises as well
-      public_id: (req, file) => Date.now(), // Use a unique identifier for the file
-  },
-});
-
-const upload = multer({ storage });
-
 routes.get('/', controller.getDestinations)
-routes.post('/', upload.single('image'), controller.Admin)
+routes.post('/', controller.Admin)
 routes.get('/packages', controller.Packages)
 routes.get('/about', controller.About)
 routes.get('/pages', controller.Pages)
