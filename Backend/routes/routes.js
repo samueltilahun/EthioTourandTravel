@@ -5,15 +5,33 @@ const path = require('path')
 const controller = require("../controller/controller")
 
 // Set up multer for file uploads
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-      cb(null, 'server/uploads/');
-    },
-    filename: (req, file, cb) => {
-      cb(null, Date.now() + path.extname(file.originalname));
-    },
-  });
+// const storage = multer.diskStorage({
+//     destination: (req, file, cb) => {
+//       cb(null, 'server/uploads/');
+//     },
+//     filename: (req, file, cb) => {
+//       cb(null, Date.now() + path.extname(file.originalname));
+//     },
+//   });
   
+// const upload = multer({ storage });
+
+// Configure Cloudinary
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
+
+const storage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  params: {
+      folder: 'uploads', // Optional folder name on Cloudinary
+      format: async (req, file) => 'png', // Supports promises as well
+      public_id: (req, file) => Date.now(), // Use a unique identifier for the file
+  },
+});
+
 const upload = multer({ storage });
 
 routes.get('/', controller.getDestinations)

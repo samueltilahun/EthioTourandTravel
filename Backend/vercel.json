@@ -1,5 +1,12 @@
 {
   "version": 2,
+  "env": {
+    "CLOUDINARY_CLOUD_NAME": "dnpfkmei5",
+    "CLOUDINARY_API_KEY": "128321931422684",
+    "CLOUDINARY_API_SECRET": "wFsVhaHunyw2ds_NkF43OjpRL4c",
+    "DB": "mongodb+srv://sammy:sammy1234@blogpost.ncufjzn.mongodb.net/ethioTourAndTravel?retrywrites=true&w=majority",
+    "PORT": "4000"
+  },
   "builds": [
     { "src": "/index.js", "use": "@vercel/node" },
     { "src": "../frontend/package.json", "use": "@vercel/static-build", "config": { "distDir": "build" } }

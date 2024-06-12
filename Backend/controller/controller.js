@@ -16,20 +16,20 @@ const getDestinations = async (req, res) => {
 
 const Admin = async (req, res) => {
 
-    const storage = multer.diskStorage({
-        destination: (req, file, cb) => {
-            cb(null, path.join(__dirname,'..', 'server', 'uploads')); // Ensure correct path
-        },
-        filename: (req, file, cb) => {
-            cb(null, Date.now() + path.extname(file.originalname));
-        },
-    });
+    // const storage = multer.diskStorage({
+    //     destination: (req, file, cb) => {
+    //         cb(null, path.join(__dirname,'..', 'server', 'uploads')); // Ensure correct path
+    //     },
+    //     filename: (req, file, cb) => {
+    //         cb(null, Date.now() + path.extname(file.originalname));
+    //     },
+    // });
     
-    const upload = multer({ storage }).single('image');
+    // const upload = multer({ storage }).single('image');
 
     const { destTitle, location, grade, fees, description } = req.body;  
     
-    const imgSrc = req.file ? `/server/uploads/${req.file.filename}` : null;
+    const imgSrc = req.file ? req.file.path : null; // Cloudinary URL
 
     console.log("Image Path:", imgSrc); // Log the file path
 
