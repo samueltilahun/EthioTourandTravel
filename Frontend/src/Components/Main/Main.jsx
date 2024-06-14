@@ -54,9 +54,6 @@ const Main = () => {
               {console.log(`${destination.imgSrc}`)} 
               <img src={`${destination.imgSrc}`} alt={destination.destTitle} />
 
-
-
-                
               </div>
               <div className="card-info">
                 <div className="dest-title">

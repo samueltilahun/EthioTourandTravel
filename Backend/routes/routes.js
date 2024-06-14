@@ -1,7 +1,5 @@
 const express = require("express");
-const routes = express.Router();
-const multer = require("multer")
-const path = require('path')
+const routes = express.Router(); 
 const controller = require("../controller/controller")
 
 // Set up multer for file uploads

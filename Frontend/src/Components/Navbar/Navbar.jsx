@@ -32,12 +32,12 @@ const Navbar = () => {
             <li className="nav-item">
               <NavLink to={'/about'} className="nav-link">About</NavLink>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <NavLink to={'/pages'} className="nav-link">Pages</NavLink>
             </li>
             <li className="nav-item">
               <NavLink to={'/news'} className="nav-link">News</NavLink>
-            </li>
+            </li> */}
             <li className="nav-item">
               <NavLink to={'/contact'} className="nav-link">Contact</NavLink>
             </li>
