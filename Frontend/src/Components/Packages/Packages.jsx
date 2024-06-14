@@ -14,7 +14,7 @@ const Packages = () => {
 
     const fetchPackages = async () => {
       try {
-        const response = await fetch('/api');
+        const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api`)
         const data = await response.json();
 
         if (response.ok) {
