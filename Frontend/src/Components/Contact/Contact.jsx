@@ -1,9 +1,10 @@
 import React from 'react'
+import "./contact.css"
 
 const Contact = () => {
   return (
     <section id="contact">
-    <div class="container">
+    <div class="section-content">
       <h1>Contact Me</h1>
       <p>If you have any questions, feel free to reach out to me!</p>
       <form action="https://formspree.io/your-email@example.com" method="POST">

@@ -14,7 +14,7 @@ const Packages = () => {
 
     const fetchPackages = async () => {
       try {
-        const response = await fetch('/api/packages');
+        const response = await fetch('/api');
         const data = await response.json();
 
         if (response.ok) {
@@ -31,42 +31,23 @@ const Packages = () => {
   }, []);
 
   return (
-    <div className="section packages container">
+    <div className="packages">
       <h3 data-aos='fade-right' className='title'>
         Popular <span>Packages</span>
       </h3>
 
-      <div className="section-content grid">
+      <div className="package-section grid">
         {error && <p className="error">{error}</p>}
         {packages.map((pkg) => (
           <div data-aos='fade-up' className="singlePackage" key={pkg._id}>
             <div className="card-image">
               <img src={pkg.imgSrc} alt={pkg.destTitle} />
+              <div className='overlay'></div>
             </div>
             <div className="card-info">
               <div className="package-title">
                 <h3>{pkg.destTitle}</h3>
               </div>
-              <div className="location flex">
-                <HiOutlineLocationMarker className='icon' />
-                <p>{pkg.location}</p>
-              </div>
-              <div className="fees flex">
-                <div className="grade">
-                  <span>{pkg.grade}</span><small>+1</small>
-                </div>
-                <div className="price">
-                  <span>{pkg.fees} BIRR</span>
-                </div>
-              </div>
-              <div className="description">
-                <p>{pkg.description}</p>
-              </div>
-
-              <button className="btn flex">
-                DETAILS
-                <HiOutlineClipboardCheck className='icon' />
-              </button>
             </div>
           </div>
         ))}
