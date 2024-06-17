@@ -51,7 +51,6 @@ const Main = () => {
           return(
             <div data-aos='fade-up' className="singleDestination" key={destination._id}>
               <div className="card-image">
-              {console.log(`${destination.imgSrc}`)} 
               <img src={`${destination.imgSrc}`} alt={destination.destTitle} />
 
               </div>
